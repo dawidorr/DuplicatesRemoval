@@ -19,6 +19,7 @@ public class Test {
     }
 
     @org.junit.Test
+    //Test with input from file and output to file
     public void checkOutputSample() throws IOException {
 
         TimeSeriesDuplicatesRemoval.removeDuplicate();

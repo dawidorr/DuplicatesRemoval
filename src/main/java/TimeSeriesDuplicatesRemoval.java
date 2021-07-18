@@ -9,14 +9,15 @@ public class TimeSeriesDuplicatesRemoval {
             int currentVoltage;
             int newVoltage;
 
-            //READ FROM FILE
+            //From file
             sensorReader = new BufferedReader(new FileReader("input.txt"));
-            //READ FROM CONSOLE
-//            InputStreamReader isr = new InputStreamReader(System.in);
-            //WRITE TO FILE
+            //Write to file
             sensorWriter = new BufferedWriter(new FileWriter("output.txt"));
-            //WRITE TO CONSOLE
+            //Read from console
+//            InputStreamReader isr = new InputStreamReader(System.in);
+            //Write to console
 //            sensorWriter = new BufferedWriter(new OutputStreamWriter(System.out));
+
             PrintWriter sensorPrintWriter = new PrintWriter(sensorWriter);
 
             currentLine = sensorReader.readLine();
