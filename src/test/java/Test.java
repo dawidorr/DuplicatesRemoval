@@ -21,8 +21,9 @@ public class Test {
     @org.junit.Test
     //Test with input from file and output to file
     public void checkOutputSample() throws IOException {
-
-        TimeSeriesDuplicatesRemoval.removeDuplicate();
+        String input = "inputTest.txt";
+        String output = "output.txt";
+        TimeSeriesDuplicatesRemoval.removeDuplicate(input,output);
 
 
         List<String> file1 = Files.readAllLines(Paths.get("output.txt"));
