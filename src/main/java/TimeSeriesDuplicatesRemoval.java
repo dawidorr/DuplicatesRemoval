@@ -1,7 +1,7 @@
 import java.io.*;
 
 public class TimeSeriesDuplicatesRemoval {
-    public static void removeDuplicate(String input, String output) {
+    public static void removeDuplicate() {
         BufferedReader sensorReader = null;
         BufferedWriter sensorWriter = null;
         try {
@@ -9,21 +9,28 @@ public class TimeSeriesDuplicatesRemoval {
             int currentVoltage;
             int newVoltage;
 
-
-            sensorReader = new BufferedReader(new FileReader(input));
-            sensorWriter = new BufferedWriter(new FileWriter(output));
+            //READ FROM FILE
+            sensorReader = new BufferedReader(new FileReader("input.txt"));
+            //READ FROM CONSOLE
+//            InputStreamReader isr = new InputStreamReader(System.in);
+            //WRITE TO FILE
+            sensorWriter = new BufferedWriter(new FileWriter("output.txt"));
+            //WRITE TO CONSOLE
+//            sensorWriter = new BufferedWriter(new OutputStreamWriter(System.out));
             PrintWriter sensorPrintWriter = new PrintWriter(sensorWriter);
 
             currentLine = sensorReader.readLine();
             sensorPrintWriter.println(currentLine);
             currentVoltage = GetVoltage.getVoltage(currentLine);
+            sensorPrintWriter.flush();
 
-            while ((currentLine = sensorReader.readLine()) != null) {
+            while ((currentLine = sensorReader.readLine()) != null ) {
                 newVoltage = GetVoltage.getVoltage(currentLine);
 
                 if(currentVoltage != newVoltage){
                     sensorPrintWriter.println(currentLine);
                     currentVoltage = newVoltage;
+                    sensorPrintWriter.flush();
                 }
             }
 
