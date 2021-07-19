@@ -1,6 +1,6 @@
 import org.junit.Assert;
 
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
@@ -23,8 +23,11 @@ public class Test {
     public void checkOutputSample() throws IOException {
         String input = "inputTest.txt";
         String output = "output.txt";
-        TimeSeriesDuplicatesRemoval.removeDuplicate(input,output);
 
+        BufferedReader sensorReaderFromFile = new BufferedReader(new FileReader(input));
+        BufferedWriter sensorWriterToFile = new BufferedWriter(new FileWriter(output));
+
+        TimeSeriesDuplicatesRemoval.removeDuplicate(sensorReaderFromFile,sensorWriterToFile);
 
         List<String> file1 = Files.readAllLines(Paths.get("output.txt"));
         List<String> file2 = Files.readAllLines(Paths.get("outputExpected.txt"));
