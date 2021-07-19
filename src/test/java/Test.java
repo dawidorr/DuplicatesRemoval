@@ -12,7 +12,7 @@ public class Test {
 
         int expectedVoltage = 1;
 
-        int currentVoltage = GetVoltage.getVoltage(test);
+        int currentVoltage = GetVoltage.getVoltageFromString(test);
 
         Assert.assertEquals(expectedVoltage,currentVoltage);
 

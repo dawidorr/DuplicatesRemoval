@@ -12,11 +12,11 @@ public class TimeSeriesDuplicatesRemoval {
 
             currentLine = sensorReader.readLine();
             sensorPrintWriter.println(currentLine);
-            currentVoltage = GetVoltage.getVoltage(currentLine);
+            currentVoltage = GetVoltage.getVoltageFromString(currentLine);
             sensorPrintWriter.flush();
 
             while ((currentLine = sensorReader.readLine()) != null ) {
-                newVoltage = GetVoltage.getVoltage(currentLine);
+                newVoltage = GetVoltage.getVoltageFromString(currentLine);
 
                 if(currentVoltage != newVoltage){
                     sensorPrintWriter.println(currentLine);
