@@ -1,5 +1,5 @@
 # Time-series-duplicates-removal
-Interview Task
+
 
 The program has two files in the directory
 
